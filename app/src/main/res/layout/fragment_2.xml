@@ -10,6 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="프래그먼트 2" />
+        android:text="프래그먼트 2: 안 만드는 듯..." />
 
 </FrameLayout>

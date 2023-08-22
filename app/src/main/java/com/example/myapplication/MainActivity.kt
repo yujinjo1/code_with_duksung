@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -33,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.viewpager.adapter = MyFragmentAdapter(this) // 어댑터 연결
+        // 탭 레이아웃 뷰피저 어댑터 연결
+        binding.viewpager.adapter = MyFragmentAdapter(this)
 
         val tabIconArray = arrayOf<Int>(R.drawable.tab1, R.drawable.tab2, R.drawable.tab3, R.drawable.tab4, R.drawable.tab5)
 
@@ -58,4 +60,5 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
 }

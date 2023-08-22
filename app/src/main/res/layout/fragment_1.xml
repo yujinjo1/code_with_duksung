@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,47 +17,110 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/main1" />
 
-        <TextView
+<!--        배너 슬라이드 -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/image_viewpager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Best Book in Duksung"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="최근 7일간 학생들이 가장 많이 대출한 책을 기준으로 집계됩니다."/>
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <!--    추천 책 스크롤 레이아웃 -->
-        <HorizontalScrollView
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/main1" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Best Book in Duksung"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="최근 7일간 학생들이 가장 많이 대출한 책을 기준으로 집계됩니다."
+                android:textSize="13dp"/>
+
+            <!--    추천 책 스크롤 레이아웃 -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_books" />
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="학생이 Pick한 책은?"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="최근 7일간 학생들의 평균 평점이 높은 책을 기준으로 집계됩니다."
+                android:textSize="13dp" />
+        </LinearLayout>
+        <!--        컴퓨터공학전공 추천 도서 -->
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:id="@+id/csBooks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cs_books" />
+
+            <Button
+                android:id="@+id/plusBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/main_books" />
-        </HorizontalScrollView>
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="3dp"
+                android:visibility="invisible"/>
+        </RelativeLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="학생이 Pick한 책은?"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="최근 7일간 학생들의 평균 평점이 높은 책을 기준으로 집계됩니다."/>
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="똑똑똑! 절약으로 한 걸음!" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 덕성 책방" />
+        </LinearLayout>
 
-<!--        컴퓨터공학전공 추천 도서 -->
+
+<!--        덕성 책방 -->
         <ImageView
-            android:id="@+id/csBooks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/cs_books" />
+            android:src="@drawable/main_3"/>
     </LinearLayout>
 
 </ScrollView>

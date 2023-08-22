@@ -40,11 +40,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Best Book in Duksung"
-                android:textSize="30dp"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Book "
+                    android:textSize="30dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="in Duksung"
+                    android:textColor="#9A3C3C"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,6 +91,7 @@
                 android:text="최근 7일간 학생들의 평균 평점이 높은 책을 기준으로 집계됩니다."
                 android:textSize="13dp" />
         </LinearLayout>
+
         <!--        컴퓨터공학전공 추천 도서 -->
         <RelativeLayout
             android:layout_width="match_parent"
@@ -89,15 +102,16 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/cs_books" />
 
+<!--            더 보기 버튼 -->
             <Button
                 android:id="@+id/plusBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="31dp"
-                android:layout_marginEnd="3dp"
-                android:visibility="invisible"/>
+                android:layout_marginTop="33dp"
+                android:layout_marginEnd="9dp"
+                android:text="더 보기" />
         </RelativeLayout>
 
         <LinearLayout
@@ -108,11 +122,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="똑똑똑! 절약으로 한 걸음!" />
+                android:text="똑똑똑! 절약으로 한 걸음!"
+                android:textSize="18dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" 덕성 책방" />
+                android:text=" 덕성 책방"
+                android:textColor="#9A3C3C"
+                android:textSize="18dp"/>
         </LinearLayout>
 
 

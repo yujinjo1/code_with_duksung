@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -46,6 +47,8 @@ class Fragment1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = Fragment1Binding.inflate(inflater, container, false)
+
+        // 뷰페이저 배너
         binding.imageViewpager.adapter = ViewPagerAdapter(getIdolList())
         binding.imageViewpager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.imageViewpager.setCurrentItem(currentPosition, false) // 현재 위치 지정
@@ -67,6 +70,12 @@ class Fragment1 : Fragment() {
                     }
                 }
             })
+        }
+
+        // 추천 도서 더보기 버튼
+        binding.plusBtn.setOnClickListener {
+            val intent = Intent(activity, PlusActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root

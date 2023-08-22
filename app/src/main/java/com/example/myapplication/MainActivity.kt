@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         // 탭 레이아웃 뷰피저 어댑터 연결
         binding.viewpager.adapter = MyFragmentAdapter(this)
 
-        val tabIconArray = arrayOf<Int>(R.drawable.tab1, R.drawable.tab2, R.drawable.tab3, R.drawable.tab4, R.drawable.tab5)
+        val tabIconArray = arrayOf<Int>(R.drawable.ic_baseline_home_24, R.drawable.ic_baseline_rate_review_24, R.drawable.ic_baseline_wysiwyg_24, R.drawable.ic_baseline_storefront_24, R.drawable.ic_baseline_person_24)
 
         // 탭 레이아웃과 뷰 페이저 연동
         TabLayoutMediator(binding.tabs, binding.viewpager) { tab, position ->

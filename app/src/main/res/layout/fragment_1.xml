@@ -1,15 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment1">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="프래그먼트 1" />-->
+<!--    이미지 자동 슬라이드 뷰페이저 구현 예정 -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="프래그먼트 1" />
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main1" />
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Best Book in Duksung"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최근 7일간 학생들이 가장 많이 대출한 책을 기준으로 집계됩니다."/>
+
+        <!--    추천 책 스크롤 레이아웃 -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_books" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="학생이 Pick한 책은?"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최근 7일간 학생들의 평균 평점이 높은 책을 기준으로 집계됩니다."/>
+
+<!--        컴퓨터공학전공 추천 도서 -->
+        <ImageView
+            android:id="@+id/csBooks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cs_books" />
+    </LinearLayout>
+
+</ScrollView>

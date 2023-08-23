@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".KeywordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecActivity2"
+            android:exported="false" />
+        <activity
             android:name=".PlusActivity"
             android:exported="false" />
         <activity
@@ -27,7 +36,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

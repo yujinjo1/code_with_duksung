@@ -1,10 +1,13 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.myapplication.databinding.Fragment1Binding
+import com.example.myapplication.databinding.Fragment3Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,8 @@ class Fragment3 : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var binding: Fragment3Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,7 +39,22 @@ class Fragment3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_3, container, false)
+        binding = Fragment3Binding.inflate(inflater, container, false)
+
+        // 대출 기록 기반 추천 이미지 버튼
+        binding.rentBtn.setOnClickListener {
+            val intent = Intent(activity, RentActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 취향 키워드 기반 추천 이미지 버튼
+        binding.keywordBtn.setOnClickListener {
+            val intent = Intent(activity, KeywordActivity::class.java)
+            startActivity(intent)
+        }
+
+        return binding.root
+        // return inflater.inflate(R.layout.fragment_3, container, false)
     }
 
     companion object {

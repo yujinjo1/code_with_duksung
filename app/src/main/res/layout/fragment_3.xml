@@ -26,84 +26,22 @@
             android:textSize="20dp"/>
     </LinearLayout>
 
-
+    <!--    대출 기록 기반 추천 이미지 버튼 -->
     <ImageButton
-        android:id="@+id/tab3Btn1"
+        android:id="@+id/rentBtn"
         android:layout_width="wrap_content"
-        android:layout_height="296dp"
-        android:scaleType="centerCrop"
+        android:layout_height="215dp"
         android:src="@drawable/fragment3_1"
+        android:scaleType="centerInside"
         android:background="@android:color/transparent"/>
 
+    <!--    취향 키워드 기반 추천 이미지 버튼 -->
     <ImageButton
-        android:id="@+id/tab3Btn2"
+        android:id="@+id/keywordBtn"
         android:layout_width="wrap_content"
-        android:layout_height="296dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fragment3_2"
-        android:background="@android:color/transparent"/>
-<!--    &lt;!&ndash;    대출 기록 기반 추천 박스 &ndash;&gt;-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:background="#EDEDED"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:padding="15dp">-->
+        android:layout_height="215dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/fragment3_2" />
 
-<!--        <ImageView-->
-<!--            android:layout_width="46dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:src="@drawable/ic_baseline_person_24" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="대출 기록 기반 추천" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="최근 대출한 책과 유사한 책을 보고 싶을 때!" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/rentPlusBtn"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="더 보기"-->
-<!--            android:background="@drawable/btn_custom"/>-->
-<!--    </LinearLayout>-->
-
-<!--    &lt;!&ndash;    취향 키워드 기반 추천 박스 &ndash;&gt;- -->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:background="#EDEDED"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:padding="15dp">-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="46dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:src="@drawable/ic_baseline_bookmarks_24" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="취향 키워드 기반 추천" />-->
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="나만의 취향을 입력하여 보고 싶을 때!" />-->
-<!--        <Button-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="더 보기"-->
-<!--            android:background="@drawable/btn_custom"/>-->
-<!--    </LinearLayout>-->
 </LinearLayout>

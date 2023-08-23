@@ -16,109 +16,96 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" >
 
 <!--        배너 슬라이드 -->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/image_viewpager"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:src="@drawable/main1" />-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Best Book "
-                    android:textSize="25dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="in Duksung"
-                    android:textColor="#9A3C3C"
-                    android:textSize="25dp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="최근 7일간 학생들이 가장 많이 대출한 책을 기준으로 집계됩니다."
-                android:textSize="13dp"/>
-
-            <!--    추천 책 스크롤 레이아웃 -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/main_books" />
-            </HorizontalScrollView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="학생이 Pick한 책은?"
-                android:textSize="25dp"/>
+                android:text="Best Book "
+                android:textSize="25dp" />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="최근 7일간 학생들의 평균 평점이 높은 책을 기준으로 집계됩니다."
-                android:textSize="13dp" />
+                android:text="in Duksung"
+                android:textColor="#9A3C3C"
+                android:textSize="25dp" />
+
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최근 7일간 학생들이 가장 많이 대출한 책을 기준으로 집계됩니다."
+            android:textSize="13dp"/>
+
+        <!--    추천 책 스크롤 레이아웃 -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/fragment1_1"
+                android:adjustViewBounds="true"/>
+        </HorizontalScrollView>
+
         <!--        컴퓨터공학전공 추천 도서 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="학생이 Pick한 책은?"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최근 7일간 학생들의 평균 평점이 높은 책을 기준으로 집계됩니다."
+            android:textSize="13dp" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/csBooks"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cs_books" />
+                android:layout_height="550dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/fragment1_2" />
 
-<!--            더 보기 버튼 -->
+            <!--            더 보기 버튼 -->
             <Button
                 android:id="@+id/plusBtn"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="33dp"
-                android:layout_marginEnd="9dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/btn_custom"
                 android:text="더 보기"
-                android:textColor="#555555"
-                android:background="@drawable/btn_custom"/>
+                android:textColor="#555555" />
         </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,17 +119,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" 덕성 책방"
+                android:text=" 덕성 책방 "
                 android:textColor="#9A3C3C"
                 android:textSize="18dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_storefront_24"
+                app:tint="@color/black"/>
         </LinearLayout>
-
-
-<!--        덕성 책방 -->
+        <!--        덕성 책방 -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/main_3"/>
-    </LinearLayout>
+            android:src="@drawable/main_3"
+            android:adjustViewBounds="true" />
 
+    </LinearLayout>
 </ScrollView>

@@ -8,7 +8,7 @@
         android:font="@font/notosans"
         android:fontStyle="normal"
         android:fontWeight="900"
-        app:font="@font/notosans"
+        app:font="@font/notomedium"
         app:fontStyle="normal"
         app:fontWeight="900" />
 

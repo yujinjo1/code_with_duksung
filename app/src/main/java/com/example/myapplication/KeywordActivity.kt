@@ -11,5 +11,7 @@ class KeywordActivity : AppCompatActivity() {
         // setContentView(R.layout.activity_keyword)
         val binding = ActivityKeywordBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
     }
 }

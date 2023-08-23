@@ -11,5 +11,9 @@ class RentActivity : AppCompatActivity() {
         // setContentView(R.layout.activity_rent)
         val binding = ActivityRentBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
     }
 }

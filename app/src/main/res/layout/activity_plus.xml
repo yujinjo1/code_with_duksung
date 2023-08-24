@@ -64,24 +64,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ranking1" />
+                android:src="@drawable/ranking1"
+                android:padding="15dp"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="전공생이 직접 픽한 믿고 보는 랭킹!"
+                android:text="전공생이 직접 고른 믿고 보는 랭킹!"
                 android:textStyle="bold"
                 android:textColor="#fff"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:background="@drawable/btn_custom"
-                android:layout_margin="10dp" />
+                android:layout_margin="20dp" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:layout_margin="10dp"
+                android:layout_margin="20dp"
                 android:src="@drawable/ranking2" />
 
             <LinearLayout
@@ -92,7 +93,7 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/btn_custom"
                 android:backgroundTint="#80ABEB"
-                android:layout_margin="10dp" >
+                android:layout_margin="20dp" >
 
                 <TextView
                     android:layout_width="wrap_content"

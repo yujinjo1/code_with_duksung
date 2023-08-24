@@ -58,7 +58,8 @@
                 android:layout_height="160dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/fragment1_1"
-                android:adjustViewBounds="true"/>
+                android:adjustViewBounds="true"
+                android:layout_marginTop="15dp"/>
         </HorizontalScrollView>
 
         <!--        컴퓨터공학전공 추천 도서 -->
@@ -66,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="학생이 Pick한 책은?"
+            android:layout_marginTop="20dp"
             android:textSize="25dp"/>
         <TextView
             android:layout_width="match_parent"
@@ -95,38 +97,33 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="2dp"
-                android:background="@drawable/btn_custom"
                 android:text="더 보기"
+                android:background="@android:color/transparent"
                 android:textColor="#555555" />
         </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="똑똑똑! 절약으로 한 걸음!"
-                android:textSize="18dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" 덕성 책방 "
-                android:textColor="#9A3C3C"
-                android:textSize="18dp"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_storefront_24"
-                app:tint="#FFD500"/>
-        </LinearLayout>
-        <!--        덕성 책방 -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/main_3"
-            android:adjustViewBounds="true" />
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="똑똑똑! 절약으로 한 걸음!"-->
+<!--                android:textSize="18dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=" 덕성 책방 "-->
+<!--                android:textColor="#9A3C3C"-->
+<!--                android:textSize="18dp"/>-->
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_baseline_storefront_24"-->
+<!--                app:tint="#FFD500"/>-->
+<!--        </LinearLayout>-->
 
     </LinearLayout>
 </ScrollView>

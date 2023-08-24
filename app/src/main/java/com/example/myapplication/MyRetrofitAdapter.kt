@@ -32,7 +32,7 @@ class MyRetrofitAdapter(val context: Context, val datas: MutableList<Review>?): 
         //holder.itemView.animation = AnimationUtils.loadAnimation(context, R.anim.list_item_animation)
 
         val model = datas!![position]
-        binding.reviewTitle.text = model.title
+        // binding.reviewTitle.text = model.title
 
 //        var stars: MutableList<ImageView> = mutableListOf(binding.star1, binding.star2, binding.star3, binding.star4, binding.star5)
 //        for(i in 0..4){
@@ -43,9 +43,9 @@ class MyRetrofitAdapter(val context: Context, val datas: MutableList<Review>?): 
 //        }
 
         //binding.ratingBar.setOnRatingBarChangeListener{}
-        binding.ratingBar.rating = model.star.toFloat()
+        // binding.ratingBar.rating = model.star.toFloat()
 
-        binding.reviewDetail.text = model.content
+        // binding.reviewDetail.text = model.content
 
     }
 }

@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -56,6 +57,11 @@ class KeywordActivity : AppCompatActivity() {
                 Toast.makeText(baseContext, "키워드를 입력해 주세요", Toast.LENGTH_LONG).show()
             }
 //            Log.d("mobileApp", binding.keywordTV1.text.toString())
+        }
+
+        binding.searchBtn.setOnClickListener {
+            val intent = Intent(this, KeywordbookActivity::class.java)
+            startActivity(intent)
         }
     }
 }

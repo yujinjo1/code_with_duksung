@@ -34,10 +34,11 @@ private const val ARG_PARAM2 = "param2"
  */
 class Fragment2 : Fragment() {
 
+    //리뷰 리스트
     var review_datas: MutableList<Review>? = null
-
+    //앱 내 데이터베이스 경로
     val ROOT_DIR = "/data/data/com.example.myapplication/databases/"
-
+    //데이터베이스
     fun setDB(ctx: Context) {
         val folder = File(ROOT_DIR)
         if (folder.exists()) {
@@ -81,12 +82,12 @@ class Fragment2 : Fragment() {
         super.onCreate(savedInstanceState)
 
 
+        //데이터베이스 불러오기
         setDB(requireContext())
         val mHelper = DBHelper(context)
         val db: SQLiteDatabase = mHelper.getReadableDatabase()
 
         review_datas = mutableListOf<Review>()
-
 
         val sql_review = "SELECT student.stdNickname, book.bookName, reviews.stars, reviews.content FROM reviews, student, book \n" +
                 "WHERE reviews.bookid = 1 AND student.studentId = reviews.studentid AND book.bookid = 1;"
@@ -99,6 +100,7 @@ class Fragment2 : Fragment() {
             val review_content = cursor_review.getString(3)?:""
             review_datas?.add(Review(review_writer, review_bookname, review_rating, review_content))
         }
+        //디비닫기
         db.close()
 
 

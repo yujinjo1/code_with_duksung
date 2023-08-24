@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/round_custom"
-                android:drawableRight="@drawable/search_24"
+                android:drawableRight="@drawable/ic_baseline_search_24"
                 android:hint="내가 사람들과 공유하고 싶은 책은?"
                 android:padding="10dp"
                 android:textColorHint="#aaa"

@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Fragment1">
 
-    <!-- TODO: Update blank fragment layout -->
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:gravity="center"-->
-<!--        android:text="프래그먼트 1" />-->
-<!--    이미지 자동 슬라이드 뷰페이저 구현 예정 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -126,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_storefront_24"
-                app:tint="@color/black"/>
+                app:tint="#FFD500"/>
         </LinearLayout>
         <!--        덕성 책방 -->
         <ImageView

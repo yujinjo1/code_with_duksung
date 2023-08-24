@@ -16,5 +16,9 @@ class PlusActivity : AppCompatActivity() {
             val intent = Intent(this, ReviewActivity::class.java)
             startActivity(intent)
         }
+
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
     }
 }

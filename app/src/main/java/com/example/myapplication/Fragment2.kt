@@ -2,12 +2,18 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.Fragment2Binding
-import com.example.myapplication.databinding.Fragment4Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,13 +29,17 @@ class Fragment2 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding: Fragment2Binding
+    lateinit var binding : Fragment2Binding
+    lateinit var adapter: MyRetrofitAdapter
+    lateinit var reviewList: MutableList<Review>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+
         }
     }
 
@@ -37,19 +47,51 @@ class Fragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = Fragment2Binding.inflate(inflater, container, false)
-        // return inflater.inflate(R.layout.fragment_2, container, false)
-        binding.btnLogin.setOnClickListener {
-            val intent = Intent(activity, AuthActivity::class.java)
-            if (binding.btnLogin.text.equals("로그인"))
-                intent.putExtra("data", "logout")
-            else if (binding.btnLogin.text.equals("로그아웃"))
-                intent.putExtra("data", "login")
-            startActivity(intent)
+
+        reviewList = mutableListOf<Review>()
+        for(i in 1..6)
+            reviewList.add(Review("제목"+i.toString(),i,"내용"+i.toString()))
+
+        var manager = LinearLayoutManager(requireContext())
+
+        binding.boardRecyclerView.layoutManager = manager
+        adapter = MyRetrofitAdapter(requireContext(), reviewList)
+        binding.boardRecyclerView.adapter = adapter
+
+        manager.setReverseLayout(true)
+        manager.setStackFromEnd(true)
+
+
+        val requestLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()){
+            var title = it.data?.getStringExtra("title")?:""
+            var star = it.data?.getIntExtra("star", 0)
+            var content = it.data?.getStringExtra("content")?:""
+            Log.d("mobileApp", "${title} / $star / $content")
+
+            reviewList.add(Review(title!!, star!!, content!!))
+            adapter.notifyDataSetChanged()
+            binding.scrollViewReview.fullScroll(ScrollView.FOCUS_UP)
+        }
+
+        binding.mainFab.setOnClickListener {
+//            if(MyApplication.checkAuth()) {
+//                //startActivity(Intent(requireContext(), AddActivity::class.java))
+//            }else {
+//                Toast.makeText(requireContext(), "인증진행해주세요..", Toast.LENGTH_SHORT).show()
+//            }
+            var intent = Intent(requireContext(), AddActivity::class.java)
+            binding.scrollViewReview.fullScroll(ScrollView.FOCUS_UP)
+            requestLauncher.launch(intent)
         }
 
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        binding.scrollViewReview.fullScroll(ScrollView.FOCUS_UP)
     }
 
     companion object {

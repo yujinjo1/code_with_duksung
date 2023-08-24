@@ -38,7 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
-            android:hint="  아이디"
+            android:hint="아이디"
+            android:padding="10dp"
             android:inputType="textEmailAddress"
             android:background="@drawable/round_custom"
             android:visibility="gone" />
@@ -48,7 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:hint="  비밀번호(숫자, 영문 8~12자리)"
+            android:hint="비밀번호(숫자, 영문 8~12자리)"
+            android:padding="10dp"
             android:inputType="textPassword"
             android:background="@drawable/round_custom"
             android:visibility="gone" />

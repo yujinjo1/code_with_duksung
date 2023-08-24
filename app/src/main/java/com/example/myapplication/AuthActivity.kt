@@ -37,6 +37,7 @@ class AuthActivity : AppCompatActivity() {
 
         if(MyApplication.checkAuth()){
             changeVisibility("login")
+            finish()
         }else {
             changeVisibility("logout")
         }
@@ -54,6 +55,7 @@ class AuthActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             MyApplication.email = account.email
                             changeVisibility("login")
+                            finish()
                         } else {
                             changeVisibility("logout")
                         }

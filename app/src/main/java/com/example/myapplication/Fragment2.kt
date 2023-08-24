@@ -1,10 +1,13 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.myapplication.databinding.Fragment2Binding
+import com.example.myapplication.databinding.Fragment4Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +23,7 @@ class Fragment2 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var binding: Fragment2Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +38,18 @@ class Fragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_2, container, false)
+        binding = Fragment2Binding.inflate(inflater, container, false)
+        // return inflater.inflate(R.layout.fragment_2, container, false)
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(activity, AuthActivity::class.java)
+            if (binding.btnLogin.text.equals("로그인"))
+                intent.putExtra("data", "logout")
+            else if (binding.btnLogin.text.equals("로그아웃"))
+                intent.putExtra("data", "login")
+            startActivity(intent)
+        }
+
+        return binding.root
     }
 
     companion object {

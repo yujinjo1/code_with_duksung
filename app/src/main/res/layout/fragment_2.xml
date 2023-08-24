@@ -5,12 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".Fragment2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:text="프래그먼트 2: 안 만드는 듯..." />-->
+    <Button
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="프래그먼트 2: 안 만드는 듯..." />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:text="로그인" />
 
 </FrameLayout>
 

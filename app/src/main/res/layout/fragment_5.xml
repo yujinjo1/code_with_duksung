@@ -6,11 +6,10 @@
     tools:context=".Fragment5">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="프래그먼트 5" />
+        android:src="@drawable/fragment5" />
 </FrameLayout>
 
 <!--<?xml version="1.0" encoding="utf-8"?>-->

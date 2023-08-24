@@ -124,16 +124,19 @@ class AuthActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         if(MyApplication.checkAuth()){
                             MyApplication.email = email
+                            finish()
                             changeVisibility("login")
                         } else {
                             Toast.makeText(baseContext, "이메일 인증 안 됨", Toast.LENGTH_SHORT).show()
                         }
                     } else {
-                        Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
+                        finish()
+                        // Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
                     }
                 }
             binding.run {
                 // authMainTextView.text = "${MyApplication.email} 님 반갑습니다."
+                finish()
                 logoutBtn.visibility= View.VISIBLE
                 goSignInBtn.visibility= View.GONE
                 googleLoginBtn.visibility= View.GONE
@@ -141,6 +144,7 @@ class AuthActivity : AppCompatActivity() {
                 authPasswordEditView.visibility= View.GONE
                 signBtn.visibility= View.GONE
                 loginBtn.visibility= View.GONE
+                searchTv.visibility = View.GONE
             }
 
         }
@@ -156,6 +160,7 @@ class AuthActivity : AppCompatActivity() {
                 authPasswordEditView.visibility = View.GONE
                 signBtn.visibility = View.GONE
                 loginBtn.visibility = View.GONE
+                searchTv.visibility = View.GONE
             }
         } else if (mode === "logout") {
             binding.run {
@@ -178,6 +183,7 @@ class AuthActivity : AppCompatActivity() {
                 authPasswordEditView.visibility = View.VISIBLE
                 signBtn.visibility = View.VISIBLE
                 loginBtn.visibility = View.GONE
+                searchTv.visibility = View.GONE
             }
         }
     }

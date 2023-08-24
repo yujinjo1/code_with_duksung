@@ -1,6 +1,9 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.AssetManager
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +17,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.Fragment2Binding
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +33,43 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Fragment2 : Fragment() {
+
+    var review_datas: MutableList<Review>? = null
+
+    val ROOT_DIR = "/data/data/com.example.myapplication/databases/"
+
+    fun setDB(ctx: Context) {
+        val folder = File(ROOT_DIR)
+        if (folder.exists()) {
+        } else {
+            folder.mkdirs()
+        }
+        val assetManager: AssetManager = ctx.getResources().getAssets()
+        val outfile = File("${ROOT_DIR}DSLibrary.db")
+        Log.d("DatabaseCheck", "Database exists: ${outfile.exists()}")
+        var isAvailable: InputStream? = null
+        var fo: FileOutputStream? = null
+        var filesize: Long = 0
+        try {
+            isAvailable = assetManager.open("DSLibrary.db", AssetManager.ACCESS_BUFFER)
+            filesize = isAvailable.available().toLong()
+            if (outfile.length() <= 0) {
+                val tempdata = ByteArray(filesize.toInt())
+                isAvailable.read(tempdata)
+                isAvailable.close()
+                outfile.createNewFile()
+                fo = FileOutputStream(outfile)
+                fo.write(tempdata)
+                fo.close()
+            } else {
+            }
+        } catch (e: IOException) {
+            Log.d("mobileApp","IOException!!!")
+        }
+    }
+
+
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,6 +79,29 @@ class Fragment2 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        setDB(requireContext())
+        val mHelper = DBHelper(context)
+        val db: SQLiteDatabase = mHelper.getReadableDatabase()
+
+        review_datas = mutableListOf<Review>()
+
+
+        val sql_review = "SELECT student.stdNickname, book.bookName, reviews.stars, reviews.content FROM reviews, student, book \n" +
+                "WHERE reviews.bookid = 1 AND student.studentId = reviews.studentid AND book.bookid = 1;"
+        val cursor_review = db.rawQuery(sql_review, null)
+
+        while (cursor_review.moveToNext()) {
+            val review_writer = cursor_review.getString(0)?:""
+            val review_bookname = cursor_review.getString(1)?:""
+            val review_rating = cursor_review.getInt(2)
+            val review_content = cursor_review.getString(3)?:""
+            review_datas?.add(Review(review_writer, review_bookname, review_rating, review_content))
+        }
+        db.close()
+
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
